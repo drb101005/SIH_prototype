@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farming Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="light">
+  <!-- Sidebar -->
+  <aside id="sidebar" class="sidebar">
+    <h2 class="logo">🌱 FarmingApp</h2>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Dashboard</a></li>
+        <li><a href="#">Crops</a></li>
+        <li><a href="#">Livestock</a></li>
+        <li><a href="#">Reports</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Header -->
+    <header class="header">
+      <button id="menu-btn" class="btn">☰</button>
+      <div class="header-right">
+        <button id="lang-btn" class="btn">🌐 EN</button>
+        <button id="dark-btn" class="btn">🌙</button>
+      </div>
+    </header>
+
+    <!-- Dashboard -->
+    <section class="dashboard">
+      <div class="card">
+        <h3>Crop Yield</h3>
+        <p><span class="value">120</span> tons</p>
+      </div>
+      <div class="card">
+        <h3>Livestock</h3>
+        <p><span class="value">85</span> animals</p>
+      </div>
+      <div class="card">
+        <h3>Revenue</h3>
+        <p>$<span class="value">12,000</span></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
