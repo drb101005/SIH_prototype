@@ -1,52 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Farming Dashboard</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>किसान मित्र — Vanilla</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="light">
-  <!-- Sidebar -->
-  <aside id="sidebar" class="sidebar">
-    <h2 class="logo">🌱 Farming       zdasApp</h2>
-    <nav>
-      <ul>
-        <li><a href="#" class="active">Dadasdasshboard</a></li>
-        <li><a href="#">Crops</a></li>
-        <li><a href="#">Livesasdasdtock</a></li>
-        <li><a href="#">Repoadsdsadsarts</a></li>
-      </ul>
-    </nav>
-  </aside>
+<body>
+  <div id="app"></div>
 
-  <!-- Main Content -->
-  <main class="main">
-    <!-- Header -->
-    <header class="header">
-      <button id="menu-btn" class="btn">dsadsad☰</button>
-      <div class="header-right">
-        <button id="lang-btn" class="btn">🌐 EN</button>
-        <button id="dark-btn" class="btn">🌙</button>
+  <!-- Templates / Modals -->
+  <template id="notifications-template">
+    <div class="overlay" id="notif-overlay">
+      <div class="panel notifications-panel" id="notifications-panel">
+        <div class="panel-header">
+          <h2 id="notif-title">Notifications</h2>
+          <button class="btn icon-btn" id="close-notif">✖</button>
+        </div>
+        <div id="notif-list" class="panel-body"></div>
       </div>
-    </header>
-
-    <!-- Dashboard -->
-    <section class="dashboard">
-      <div class="card">
-        <h3>Crop Yield</h3>
-        <p><span class="value">1asd20</span> toadsasns</p>
-      </div>
-      <div class="card">
-        <h3>Livestock</h3>
-        <p><span class="value">dsa85</span> anidsamals</p>
-      </div>
-      <div class="card">
-        <h3>Revenue</h3>
-        <p>$<span class="value">12,dsadasd000</span></p>
-      </div>
-    </section>
-  </main>
+    </div>
+  </template>
 
   <script src="script.js"></script>
 </body>
