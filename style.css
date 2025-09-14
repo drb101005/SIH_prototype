@@ -1,130 +1,72 @@
-:root {
-  --green: #2e7d32;
-  --green-light: #66bb6a;
-  --blue: #2196f3;
-  --soil: #8d6e63;
-  --bg-light: #f5f7fa;
-  --bg-card: #ffffff;
-  --text-dark: #212121;
-  --text-muted: #616161;
-  --radius: 20px;
-  --shadow: 0 6px 24px rgba(0,0,0,0.1);
-  font-family: "Noto Sans Devanagari", "Inter", sans-serif;
+/* Simple responsive styling (mobile-first) for the converted app */
+/* Colors inspired by original Tailwind design */
+:root{
+  --green: #16a34a;
+  --green-600: #16a34a;
+  --blue: #0ea5e9;
+  --orange: #f97316;
+  --purple: #7c3aed;
+  --bg: #f3f4f6;
+  --card: #ffffff;
+  --muted: #6b7280;
+  --radius: 18px;
+  --shadow: 0 8px 30px rgba(2,6,23,0.08);
+  font-family: "Noto Sans Devanagari", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
 }
 
-body, html, #app {
-  margin: 0; padding: 0;
-  height: 100%;
-  background: var(--bg-light);
-  color: var(--text-dark);
+/* Layout */
+*{box-sizing: border-box}
+html,body,#app{height:100%;margin:0;background:var(--bg);color:#111}
+.container{max-width:420px;margin:0 auto;min-height:100vh;padding:18px}
+
+/* Cards, buttons */
+.card{background:var(--card);border-radius:var(--radius);padding:18px;margin-bottom:14px;box-shadow:var(--shadow)}
+.header{border-radius:20px;padding:18px;margin-bottom:16px;background:linear-gradient(90deg,var(--green),var(--blue));color:#fff}
+.title{font-size:20px;font-weight:700}
+.subtitle{color:rgba(255,255,255,0.9);font-size:13px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 14px;border-radius:12px;border:none;cursor:pointer;font-weight:600}
+.btn-primary{background:linear-gradient(90deg,var(--green),var(--blue));color:#fff}
+.btn-ghost{background:transparent;border:1px solid #e5e7eb;color:var(--muted)}
+.btn-block{display:block;width:100%}
+
+/* Tiny utilities */
+.mt-6{margin-top:18px}
+.mb-6{margin-bottom:18px}
+.flex{display:flex}
+.center{align-items:center;justify-content:center}
+.space-between{display:flex;justify-content:space-between;align-items:center}
+.row{display:flex;gap:8px}
+.small{font-size:13px;color:var(--muted)}
+.badge{background:#ef4444;color:#fff;padding:4px 8px;border-radius:10px;font-size:12px}
+
+/* Welcome */
+.welcome-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:18px}
+
+/* Generic grid */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+
+/* Chat */
+.chat{display:flex;flex-direction:column;height:70vh}
+.chat-messages{flex:1;overflow-y:auto;padding:10px;display:flex;flex-direction:column;gap:8px}
+.msg{max-width:78%;padding:10px 12px;border-radius:12px}
+.msg.bot{background:#f3f4f6;align-self:flex-start}
+.msg.user{background:linear-gradient(90deg,var(--green),var(--blue));color:#fff;align-self:flex-end}
+
+/* form */
+.input, select {width:100%;padding:10px;border-radius:10px;border:1px solid #e6e6e6}
+.label{display:block;margin-bottom:6px;font-weight:600;color:#374151}
+
+/* Responsive */
+@media(min-width:880px){
+  .container{max-width:640px}
+  .header{padding:22px}
 }
 
-h1, h2, h3 { margin: 0; }
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 16px;
-}
-
-.card {
-  background: var(--bg-card);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 20px;
-  margin-bottom: 16px;
-  transition: transform 0.2s ease;
-}
-.card:hover { transform: translateY(-2px); }
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 18px;
-  border-radius: 14px;
-  border: none;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.15s, background 0.2s;
-}
-.btn:hover { transform: scale(1.03); }
-.btn:active { transform: scale(0.97); }
-
-.btn-primary {
-  background: linear-gradient(90deg, var(--green), var(--blue));
-  color: white;
-}
-.btn-ghost {
-  background: transparent;
-  border: 1px solid #ddd;
-  color: var(--text-muted);
-}
-
-.header {
-  background: linear-gradient(120deg, var(--green), var(--blue));
-  color: white;
-  border-radius: var(--radius);
-  padding: 18px;
-  margin-bottom: 20px;
-}
-.header-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.header-weather {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(255,255,255,0.15);
-  padding: 12px;
-  border-radius: 14px;
-  margin-top: 14px;
-}
-
-.grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
-.grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
-.grid-1 { display: grid; grid-template-columns: 1fr; gap: 14px; }
-
-.welcome {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-.welcome-quote {
-  margin: 20px 0;
-  font-size: 1rem;
-  font-style: italic;
-  color: var(--text-muted);
-}
-
-.chat {
-  display: flex;
-  flex-direction: column;
-  height: 70vh;
-}
-.chat-messages {
-  flex: 1;
-  overflow-y: auto;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.msg {
-  padding: 10px 14px;
-  border-radius: 14px;
-  max-width: 70%;
-}
-.msg.bot { background: #f3f4f6; align-self: flex-start; }
-.msg.user { background: linear-gradient(90deg, var(--green), var(--blue)); color: white; align-self: flex-end; }
-
-@media(max-width:768px){
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
-  .btn { font-size: 0.9rem; padding: 10px 14px; }
-}
+/* Tiny animations */
+.fade-in{animation:fadeIn .35s ease;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
